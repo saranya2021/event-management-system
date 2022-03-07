@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="Page description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Divine Event Management system" name="author">
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <title>Divine Events Managemet System</title>  
+
+<link href="./main.82cfd66e.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Add your content of header -->
+<header class="">
+  <div class="navbar navbar-default visible-xs">
+    <button type="button" class="navbar-toggle collapsed">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a href="./index.html" class="navbar-brand">Divine Events</a>
+  </div>
+
+  <nav class="sidebar">
+    <div class="navbar-collapse" id="navbar-collapse">
+      <div class="site-header hidden-xs">
+          <a class="site-brand" href="./index.html" title="">
+            <img class="img-responsive site-logo" alt="" src="./assets/images/logo.jpg">
+                      Divine Events         </a>
+					  <p class="currentloc"> </p>
+        	                  <p id="dateAndTime"></p>
+
+      </div>
+     
+	  <h4 name="event management">Location</h4>
+	    <select onchange="location = this.value;">
+  <option value="index.html">Poznan</option>
+  <option value="index_warsow.html">warsaw</option>
+  <option value="index_krakow.html"  selected>Krakow</option>
+</select>
+	 <h4 name="poznan events">Category</h4>
+     <ul class="nav">
+        <li><a href="./index_krakow.html" title="" class="category_menu">All events</a></li>
+        <li><a href="./business_krakow.html" title="" class="category_menu" >Business</a></li>
+        <li><a href="./parties_krakow.html" title="" class="category_menu">Parties</a></li>
+        <li><a href="./sports_krakow.html" title="" class="category_menu">Sports</a></li>
+		<li><a href="./music_krakow.html" title="">Music</a></li>
+		</ul>
+		
+      <nav class="nav-footer">
+        <p class="nav-footer-social-buttons">
+          <a class="fa-icon" href="https://www.instagram.com/" title="Divine events">
+            <i class="fa fa-instagram"></i>
+          </a>
+          <a class="fa-icon" href="https://dribbble.com/" title="Divine events">
+            <i class="fa fa-dribbble"></i>
+          </a>
+          <a class="fa-icon" href="https://twitter.com/" title="Divine events">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </p>
+        <p>© Divine Events| All Rights Reserved</p>
+      </nav>  
+    </div> 
+  </nav>
+</header>
+<main class="" id="main-collapse">
+
+
+<div class="row">
+  <div class="col-xs-12 section-container-spacer">
+    <h1>Business</h1>
+    
+	  
+	  <h4>UPCOMING BUSINESS EVENTS IN KRAKOW</h4>
+<p>Discover Business Meetups, Networking Events, Seminars & Conferences in krakow & around the world</p>
+<p>Grow your business and meet like minded people at some of the biggest business and networking events in krakow. Managing a big firm or planning to build a startup, there are all the kinds of business events that suit your preferences. Be a part of huge summits, startup events or a relatively casual business luncheon and find the right platform to engage with such business events in krakow. 
+Explore from the extensive business events near you; for business growth, for networking, for finding answers or just simply for personal growth.</p>
+  </div>
+
+  <div class="col-xs-12 col-md-4 section-container-spacer">
+    <img class="img-responsive" alt="" src="./assets/images/Lead-B1W.jpg">
+    <h3>Lead Generation Masterclass</h3>
+	<h5>Mar 8,2022</h5>
+    <p>Learn The Top Lead Generation Secrets To Effectively Generate Qualified Leads Everyday For Any Product Or Service</p>
+    <a href="./Lead-B1k.html" class="btn btn-primary" title=""> Get in touch</a>
+  </div>
+
+  <div class="col-xs-12 col-md-4 section-container-spacer">
+    <img class="img-responsive" alt="" src="./assets/images/hustle-B2W.jpg">
+    <h3>Side Hustle Accelerator Masterclass</h3>
+	<h5>Mar 8, 2022 - Mar 9, 2022 </h5>
+    <p>Learn The Top Side-Hustle Secrets To Effectively Finding, Launching and Monetizing Your Side Hustle and Taking It To The Next Level</p>
+    <a href="./hustle-B2k.html" class="btn btn-primary" title=""> Get in touch</a>
+  </div>
+
+ 
+
+</div>
+
+
+</main>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function(){
+$.get("http://ipinfo.io", function(response) {
+    $('.currentloc').text(response.city);
+}, "jsonp");
+
+$('a.category_cls').on('click', function() { 
+var hiddenVal = $(this).closest('li').find('input[type="hidden"]').val();
+var locationVal = $('a.location_menu').find('li.active').find('input[type="hidden"]').val();
+	console.log(hiddenVal+" "+locationVal);
+
+});
+
+});
+  document.addEventListener("DOMContentLoaded", function (event) {
+     masonryBuild();
+  });
+</script>
+
+</main>
+
+<script>$(function() {
+    myTimer();
+    setInterval(function(){ myTimer() }, 1000);
+    function myTimer()
+    {
+        var y = new Date();
+        var time = y.toLocaleTimeString();
+        var year = y.getFullYear();
+        var month = y.getMonth() + 1;
+        var day = y.getDate();
+        document.getElementById("dateAndTime").innerHTML = "" + day + "/" + month + "/" + year + " " + time + "";
+    }
+});
+document.addEventListener("DOMContentLoaded", function (event) {
+  navbarToggleSidebar();
+  navActivePage();
+});
+</script>
+<script type="text/javascript" src="./main.85741bff.js"></script>
+</body>
+</html>

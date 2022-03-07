@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="Page description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Divine Event Management system" name="author">
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <title>Divine Events Managemet System</title>  
+
+<link href="./main.82cfd66e.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Add your content of header -->
+<header class="">
+  <div class="navbar navbar-default visible-xs">
+    <button type="button" class="navbar-toggle collapsed">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a href="./index.html" class="navbar-brand">Divine Events</a>
+  </div>
+
+  <nav class="sidebar">
+    <div class="navbar-collapse" id="navbar-collapse">
+      <div class="site-header hidden-xs">
+          <a class="site-brand" href="./index.html" title="">
+            <img class="img-responsive site-logo" alt="" src="./assets/images/logo.jpg">
+                      Divine Events         </a>
+					  <p class="currentloc"> </p>
+        	                  <p id="dateAndTime"></p>
+
+      </div>
+     
+	  <h4 name="event management">Location</h4>
+	    <select onchange="location = this.value;">
+  <option value="index.html" selected>Poznan</option>
+  <option value="index_warsow.html">warsaw</option>
+  <option value="index_krakow.html" >Krakow</option>
+</select>
+	 <h4 name="poznan events">Category</h4>
+     <ul class="nav">
+        <li><a href="./index.html" title="" class="category_menu">All events</a></li>
+        <li><a href="./business.html" title="" class="category_menu" >Business</a></li>
+        <li><a href="./parties.html" title="" class="category_menu">Parties</a></li>
+        <li><a href="./sports.html" title="" class="category_menu">Sports</a></li>
+		<li><a href="./music.html" title="">Music</a></li>
+		</ul>
+		
+      <nav class="nav-footer">
+        <p class="nav-footer-social-buttons">
+          <a class="fa-icon" href="https://www.instagram.com/" title="Divine events">
+            <i class="fa fa-instagram"></i>
+          </a>
+          <a class="fa-icon" href="https://dribbble.com/" title="Divine events">
+            <i class="fa fa-dribbble"></i>
+          </a>
+          <a class="fa-icon" href="https://twitter.com/" title="Divine events">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </p>
+        <p>© Divine Events| All Rights Reserved</p>
+      </nav>  
+    </div> 
+  </nav>
+</header>
+<main class="" id="main-collapse">
+
+
+<div class="row">
+  <div class="col-xs-12 section-container-spacer">
+    <h1>Parties</h1>
+    
+	  <h4>POZNAN NIGHTLIFE AND PARTIES</h4>
+<p>Nightclubs, Parties And Pub Crawls In Poznan</p>
+<p>Life can never be boring if you learn to party hard. Don't just wait for weekends, celebrate every accomplishment or even your existence. Check out the Poznan nightlife scene with pool parties, discotheques, DJ Nights, pub crawls, trance festivals and many more. You will be surprised to find many happy hours booze and best DJs playing your favorite EDM at weekend party venues near you in Poznan.</p>
+
+<p>Dance to the beats. Explore the parties in Poznan.</p>
+  </div>
+
+  <div class="col-xs-12 col-md-4 section-container-spacer">
+    <img class="img-responsive" alt="" src="./assets/images/parties1.jpg">
+    <h3>RAP GAME POZNAŃ | dj Taek</h3>
+	<h5>Mar 8, 2022 - Mar 9, 2022 </h5>
+    <p>RAP GRA Thursday cycle devoted 100% to music.
+The commander-in-chief DJ NOZ aka eNOZet, a man from Sopot, Mewa Towarzyska, invited the best players to dance.</p>
+    <a href="./rapgame.html" class="btn btn-primary" title=""> Am Interested</a>
+  </div>
+
+  <div class="col-xs-12 col-md-4 section-container-spacer">
+    <img class="img-responsive" alt="" src="./assets/images/parties2.jpg">
+    <h3>FAT THURSDAY</h3>
+	<h5>Mar 6, 2022 - Mar 16, 2022 </h5>
+    <p>The event during the week cannot take place without us?
+Take whoever you can and come to our dance floor every week on Thursday? Dj Meehoo at the controls blows you away with the best songs! Are you looking forward to it? ?
+WE TOO !!! ♥ ️ ♥ ️ ♥ ️
+</p>
+    <a href="./fatthursday.html" class="btn btn-primary" title=""> Am Interested</a>
+  </div>
+
+  <div class="col-xs-12 col-md-4 section-container-spacer">
+    <img class="img-responsive" alt="" src="./assets/images/parties3.jpg">
+    <h3>Hips don't lie - Shakira Latino Night</h3>
+		<h5>Mar 6, 2022 </h5>
+
+    <p>Anytime ... Anywhere ... We're coming back to Poznań! Crazy night on the dance floor HAHu. The Latin fiesta continues, it's gonna be hot. ️‍?
+
+As always, we shake our hips to the best Latin hits. Great fun in South American style must not miss you!</p>
+    <a href="./shakiralatinonight.html" class="btn btn-primary" title=""> Am Interested</a>
+  </div>
+
+</div>
+
+
+</main>
+
+<script>
+$(document).ready(function(){
+$.get("http://ipinfo.io", function(response) {
+    $('.currentloc').text(response.city);
+}, "jsonp");
+
+$('a.category_cls').on('click', function() { 
+var hiddenVal = $(this).closest('li').find('input[type="hidden"]').val();
+var locationVal = $('a.location_menu').find('li.active').find('input[type="hidden"]').val();
+	console.log(hiddenVal+" "+locationVal);
+
+});
+
+});
+  document.addEventListener("DOMContentLoaded", function (event) {
+     masonryBuild();
+  });
+</script>
+
+</main>
+
+<script>$(function() {
+    myTimer();
+    setInterval(function(){ myTimer() }, 1000);
+    function myTimer()
+    {
+        var y = new Date();
+        var time = y.toLocaleTimeString();
+        var year = y.getFullYear();
+        var month = y.getMonth() + 1;
+        var day = y.getDate();
+        document.getElementById("dateAndTime").innerHTML = "" + day + "/" + month + "/" + year + " " + time + "";
+    }
+});
+document.addEventListener("DOMContentLoaded", function (event) {
+  navbarToggleSidebar();
+  navActivePage();
+});
+</script>
+ <script type="text/javascript" src="./main.85741bff.js"></script></body>
+
+</html>
